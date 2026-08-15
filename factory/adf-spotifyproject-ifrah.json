@@ -1,0 +1,15 @@
+{
+	"name": "adf-spotifyproject-ifrah",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "canadacentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "540cac4b-7d61-45dd-b25c-1b5a2d14c73e",
+		"tenantId": "837c9f73-2e7e-42c9-b8dd-574965ccb838"
+	}
+}
