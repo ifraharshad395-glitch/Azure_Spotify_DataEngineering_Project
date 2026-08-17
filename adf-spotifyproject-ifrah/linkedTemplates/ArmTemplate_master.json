@@ -1,0 +1,84 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf-spotifyproject-ifrah"
+		},
+		"azuresqldb_ls_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'azuresqldb_ls'"
+		},
+		"spotifydatalake_ls_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'spotifydatalake_ls'"
+		},
+		"azuresqldb_ls_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "spotifydeprojectserver.database.windows.net"
+		},
+		"azuresqldb_ls_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "spotifydatabase"
+		},
+		"azuresqldb_ls_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "spotifyadminifrah"
+		},
+		"spotifydatalake_ls_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://spotifydatalakeifrah.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adf-spotifyproject-ifrah_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"azuresqldb_ls_password": {
+						"value": "[parameters('azuresqldb_ls_password')]"
+					},
+					"spotifydatalake_ls_accountKey": {
+						"value": "[parameters('spotifydatalake_ls_accountKey')]"
+					},
+					"azuresqldb_ls_properties_typeProperties_server": {
+						"value": "[parameters('azuresqldb_ls_properties_typeProperties_server')]"
+					},
+					"azuresqldb_ls_properties_typeProperties_database": {
+						"value": "[parameters('azuresqldb_ls_properties_typeProperties_database')]"
+					},
+					"azuresqldb_ls_properties_typeProperties_userName": {
+						"value": "[parameters('azuresqldb_ls_properties_typeProperties_userName')]"
+					},
+					"spotifydatalake_ls_properties_typeProperties_url": {
+						"value": "[parameters('spotifydatalake_ls_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
