@@ -28,7 +28,7 @@ The main Azure services and technologies used in this project include:
 * Delta Lake
 * GitHub
 
-![image alt](https://github.com/ifraharshad395-glitch/Azure_Spotify_DataEngineering_Project/blob/7e9eac9cb99dfa64175a4ccd5eb45646e35c6de4/incremental_pipeline.png)
+![image alt](https://github.com/ifraharshad395-glitch/Azure_Spotify_DataEngineering_Project/blob/e321668d050f51018493bb1cfff4c91932076b0e/resource_group_and_resources.png)
 ---
 
 ## Project Architecture
@@ -43,7 +43,7 @@ Spotify datasets are hosted on GitHub and retrieved using **Azure Data Factory**
 
 This layer preserves the source data and provides a reliable starting point for downstream processing. 
 
-![imgage alt](
+![imgage alt](https://github.com/ifraharshad395-glitch/Azure_Spotify_DataEngineering_Project/blob/e321668d050f51018493bb1cfff4c91932076b0e/incremental_pipeline.png)
 
 ### Silver Layer — Cleaned & Transformed Data
 
