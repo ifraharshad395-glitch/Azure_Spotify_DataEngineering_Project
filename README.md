@@ -1,7 +1,5 @@
 # Azure_Spotify_DataEngineering_Project
 
-# Azure Spotify Data Engineering Project
-
 ## Project Overview
 
 This project is an end-to-end **Data Engineering pipeline** built using Microsoft Azure and Databricks. The objective of the project is to ingest Spotify-related data from GitHub, process and transform the data through a **Medallion Architecture**, and create structured analytical tables in the Gold layer.
